@@ -1,0 +1,33 @@
+//------------------------------------
+//  $SECTION
+//------------------------------------
+/**
+ * Basic Structural Element "section"
+ */
+$m: "section"
+
+
+//------------------------------------
+//  $BASE
+//------------------------------------
+.#{$m}
+    display: block
+    padding: 0 $column-gutter/2
+
+    &__content
+        max-width: $screen-lg-min
+        margin: 0 auto
+
+
+//------------------------------------
+//  $MODIFIERS
+//------------------------------------
+.#{$m}
+
+    &--main,
+    &--map
+        padding: 0
+
+        .#{$m}
+            &__content
+                max-width: none

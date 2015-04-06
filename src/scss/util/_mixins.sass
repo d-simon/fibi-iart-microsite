@@ -1,0 +1,35 @@
+@mixin box-sizing($sizing-model: border-box)
+    box-sizing: $sizing-model
+
+    *, *:before, *:after
+        box-sizing: inherit
+
+@mixin equal-width($start, $end, $selector)
+    @for $i from $start through $end
+        #{$selector}:first-child:nth-last-child(#{$i}),
+        #{$selector}:first-child:nth-last-child(#{$i}) ~ #{$selector}
+            width: #{100%/$i}
+
+
+@mixin focused()
+    &:hover, &:focus
+        @content
+
+
+@mixin overlay($pos: absolute, $root-y: top, $root-x: left)
+    position: $pos
+    #{$root-y}: 0
+    #{$root-x}: 0
+    width: 100%
+    height: 100%
+
+
+@mixin visible($toggle, $speed: 200ms)
+    @if $toggle == true
+        visibility: inherit
+        opacity: 1
+        transition: visibility 0ms linear 0ms, opacity $speed ease 0ms
+    @else
+        visibility: hidden
+        opacity: 0
+        transition: visibility 0ms linear $speed, opacity $speed ease 0ms

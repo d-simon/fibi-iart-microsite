@@ -1,0 +1,21 @@
+general:
+  branches:
+    only:
+      - master
+
+dependencies:
+  pre:
+  post:
+      - npm install -g gulp
+      - bower install
+
+test:
+  override:
+      - npm run test
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run dist
+      - npm run deploy:prod
