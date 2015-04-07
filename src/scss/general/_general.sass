@@ -2,3 +2,12 @@
 // but allow components to change
 html
     @include box-sizing(border-box)
+    height: 100%
+
+body
+    min-height: 100%
+
+    cursor: url("../img/cursor_point_xs.png") 50 128, pointer
+
+    &.is-mouse-down
+        cursor: url("../img/cursor_grab_xs.png") 50 128, pointer
