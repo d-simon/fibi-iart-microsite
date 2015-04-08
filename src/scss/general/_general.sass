@@ -7,7 +7,30 @@ html
 body
     min-height: 100%
 
-    cursor: url("../img/cursor_point_xs.png") 50 128, pointer
+    cursor: url("../img/cursor_point_xs.png") 35 10, pointer
 
     &.is-mouse-down
-        cursor: url("../img/cursor_grab_xs.png") 50 128, pointer
+        cursor: url("../img/cursor_grab_xs.png") 35 10, pointer
+
+    &.is-nono-hover
+        cursor: url("../img/cursor_point_left_xs.png") 35 10, pointer
+    &.is-nono-hover-2
+        cursor: url("../img/cursor_point_right_xs.png") 35 10, pointer
+
+
+.nono
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 200px
+    height: 200px
+    background-color: #eee
+
+.bifi
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 200px
+    height: 200px
+    background-color: #ffdd00
+    cursor: url("../img/cursor_bifi.png") 60 20, pointer
