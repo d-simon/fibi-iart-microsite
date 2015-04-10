@@ -7,13 +7,21 @@ html
 body
     height: 100%
     overflow: hidden
+    background-color: $color-bifi-1
+    color: $color-base-font
 
     @include font-base()
-    font-size: 36px
+    line-height: 1.2
     letter-spacing: -0.02em
 
-    background-color: $color-bifi-1
+    @include media(">xs")
+        font-size: 24px
+    @include media(">md")
+        font-size: 36px
 
+    /**
+     * Cursor Magic
+     */
     @include cursor("../img/cursor_point.png", 35, 10, pointer, "../img/cursor_point@2x.png")
 
     &.is-mouse-down
@@ -26,6 +34,32 @@ body
 
 
 
+a
+    &, &:active, &:hover, &:visited, &:link, &:focus
+        color: $color-base-font
+        text-decoration: none
+
+
+
+.basetext
+    position: absolute
+    top: $site-margin
+    left: $site-margin
+
+    &--location
+        top: $site-margin
+        right: $site-margin
+        left: auto
+    &--info
+        top: auto
+        right: $site-margin
+        bottom: $site-margin
+        left: auto
+    &--date
+        top: auto
+        bottom: $site-margin
+        left: $site-margin
+
 
 
 .main-bifi
@@ -35,10 +69,13 @@ body
     &__content
         @include font-fat()
         overflow: hidden
-        font-size: 55vh
+        font-size: 45vh
         line-height: 0.9
         white-space: nowrap
         padding-left: 0.14em
+        position: relative
+        top: 50%
+        transform: translateY(-50%)
 
     &__letter
         display: inline-block
@@ -49,7 +86,7 @@ body
             white-space: pre
 
 
-@media screen and (max-aspect-ratio: 4/5)
+@media screen and (max-aspect-ratio: 3/5)
     .main-bifi
         &__content
             font-size: 70vw
