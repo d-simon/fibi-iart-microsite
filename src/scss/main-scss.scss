@@ -2,6 +2,7 @@
 
 //** _ SETTINGS - Variables, Configuration **//
 @import "settings/variables";
+@import "settings/foundation-variables";
 
 
 //** 0 VENDOR **//
@@ -10,6 +11,9 @@
 @import "vendor/reset-meyerweb.scss";
 @import "vendor/include-media.scss";
 
+
+@import "../../bower_components/foundation/scss/foundation/functions";
+@import "../../bower_components/foundation/scss/foundation/components/grid";
 
 //** 1 VENDOR-EXTENSION **//
 //

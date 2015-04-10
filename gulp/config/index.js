@@ -34,7 +34,8 @@ module.exports = {
             path: paths.src,
             folders: [
                 'js/vendor/**',
-                'ico/**'
+                'ico/**',
+                'fonts/**'
             ]
         },
         build: {

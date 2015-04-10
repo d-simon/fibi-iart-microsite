@@ -5,17 +5,75 @@ html
     height: 100%
 
 body
-    min-height: 100%
+    height: 100%
+    overflow: hidden
 
-    cursor: url("../img/cursor_point_xs.png") 35 10, pointer
+    @include font-base()
+    font-size: 36px
+    letter-spacing: -0.02em
+
+    background-color: $color-bifi-1
+
+    @include cursor("../img/cursor_point.png", 35, 10, pointer, "../img/cursor_point@2x.png")
 
     &.is-mouse-down
-        cursor: url("../img/cursor_grab_xs.png") 35 10, pointer
+        @include cursor("../img/cursor_grab.png", 35, 10, pointer, "../img/cursor_grab@2x.png")
 
     &.is-nono-hover
-        cursor: url("../img/cursor_point_left_xs.png") 35 10, pointer
+        @include cursor("../img/cursor_point_left.png", 35, 10, pointer, "../img/cursor_point_left@2x.png")
     &.is-nono-hover-2
-        cursor: url("../img/cursor_point_right_xs.png") 35 10, pointer
+        @include cursor("../img/cursor_point_right.png", 35, 10, pointer, "../img/cursor_point_right@2x.png")
+
+
+
+
+
+.main-bifi
+    text-align: center
+    height: 100vh
+
+    &__content
+        @include font-fat()
+        overflow: hidden
+        font-size: 55vh
+        line-height: 0.9
+        white-space: nowrap
+        padding-left: 0.14em
+
+    &__letter
+        display: inline-block
+        width: 0.65em
+    &__break
+        &::after
+            content: "\000A"
+            white-space: pre
+
+
+@media screen and (max-aspect-ratio: 4/5)
+    .main-bifi
+        &__content
+            font-size: 70vw
+            position: relative
+            top: 50%
+            transform: translateY(-50%)
+
+// inline
+@media screen and (min-aspect-ratio: 16/12)
+    .main-bifi
+        text-align: center
+        &__content
+            font-size: 40vw
+            line-height: 100vh
+            margin-left: -0.1em
+        &__letter
+            display: inline
+            width: auto
+            letter-spacing: 0.04em
+        &__break
+            display: none
+            &::after
+                content: none
+
 
 
 .nono
@@ -33,4 +91,4 @@ body
     width: 200px
     height: 200px
     background-color: #ffdd00
-    cursor: url("../img/cursor_bifi.png") 60 20, pointer
+    @include cursor("../img/cursor_bifi.png", 60, 20, pointer, "../img/cursor_bifi@2x.png")

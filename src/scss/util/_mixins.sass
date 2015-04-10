@@ -33,3 +33,10 @@
         visibility: hidden
         opacity: 0
         transition: visibility 0ms linear $speed, opacity $speed ease 0ms
+
+@mixin cursor($url, $x: 0, $y: 0, $fallback: auto, $url-retina: false)
+    cursor: url($url) $x $y, $fallback
+    @if ($url-retina != false)
+        cursor: -webkit-image-set(url($url) 1x, url($url-retina) 2x) $x $y, $fallback
+        // cursor:         image-set(url($url) 1x, url($url-retina) 2x) $x $y, $fallback
+
