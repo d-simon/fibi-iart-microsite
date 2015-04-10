@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 function $cursorify() {
     var $body = $(document.body),
         $nono = $('.nono');
