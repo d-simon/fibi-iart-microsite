@@ -12,9 +12,9 @@ $screen-md-max: ($screen-lg-min - 1);
 
 //** Break point definitions for the "include-media" SCSS plugin. **//
 $breakpoints: (
-    xs:  $screen-xs-max,
-    sm:  $screen-sm-max,
-    md:  $screen-md-max,
+    xs:  $screen-xs-min,
+    sm:  $screen-sm-min,
+    md:  $screen-md-min,
     lg:  $screen-lg-min
 );
 
