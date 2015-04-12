@@ -1,0 +1,57 @@
+//------------------------------------
+//  $BANNER
+//------------------------------------
+.banner
+    z-index: 12
+    position: absolute
+    top: 50%
+    left: 50%
+    color: white
+    transform: translateY(-64%) translateX(-50%) rotate(-17deg)
+
+    &__info,
+    &__subtitle
+        margin-left: 5px
+        font-size: 24px
+        // font-size: 60px
+
+    &__title
+        @include font-fat()
+        font-size: 160px
+        margin-bottom: -40px
+
+
+
+    @include media(">xs")
+        &__title
+            font-size: 220px
+            margin-bottom: -50px
+
+        &__info,
+        &__subtitle
+            margin-left: 6px
+            font-size: 36px
+
+
+
+    @include media(">lg")
+        &__title
+            font-size: 300px
+            margin-bottom: -75px
+
+        &__info,
+        &__subtitle
+            font-size: 48px
+            margin-left: 10px
+
+
+
+    @include media(">1600px")
+        &__title
+            font-size: 380px
+            margin-bottom: -95px
+
+        &__info,
+        &__subtitle
+            font-size: 60px
+            margin-left: 10px
