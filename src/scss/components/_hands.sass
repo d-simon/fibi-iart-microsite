@@ -5,18 +5,33 @@
 .hands
     position: absolute
     z-index: 13
-    top: 250px
-    left: -250px
-    width: 501px
-    height: 710px
+    top: 20%
+    left: -140px
+    width: 250px
+    height: 355px
     transform: rotate(25deg)
-    background-image: url('../img/grab_yellow_white_left.png')
     background-size: 100% 100%
+    background-image: url('../img/grab_yellow_white_left.png')
+    @include media("retina2x")
+        background-image: url('../img/grab_yellow_white_left@2x.png')
 
 
     &--right
         background-image: url('../img/grab_yellow_white.png')
-        top: 250px
+        @include media("retina2x")
+            background-image: url('../img/grab_yellow_white@2x.png')
+        top: 15%
         left: auto
-        right: -250px
+        right: -140px
         transform: rotate(-40deg)
+
+    @include media(">=xs")
+
+    @include media(">=md")
+        left: -250px
+        width: 501px
+        height: 710px
+
+        &--right
+            left: auto
+            right: -250px

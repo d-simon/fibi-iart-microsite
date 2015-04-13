@@ -6,7 +6,6 @@ html
 
 body
     height: 100%
-    overflow: hidden
     background-color: $color-bifi-1
     color: $color-base-font
 
@@ -37,6 +36,106 @@ body
 @mixin cursor-hover()
     &:hover
         @include cursor("../img/cursor_grab.png", 35, 10, pointer, "../img/cursor_grab@2x.png")
+
+
+.mainsite
+    width: 100%
+    height: 100%
+    position: relative
+    overflow: hidden
+
+// [data-js-draggable]
+//     transition: all 0.4s linear
+//     position: relative
+
+// .vex-open
+//     [data-js-draggable]
+//         top: -2000px !important
+//         left: -1000px !important
+//         bottom: auto !important
+//         right: auto !important
+
+.infocard
+    background: #fff
+    padding: 40px
+    position: absolute
+    top: 10%
+    left: 10%
+    line-height: 1.41
+
+    @include media(">=xs")
+        width: 420px
+        padding: 40px
+
+    @include media(">=md")
+        top: 20%
+        left: 20%
+        width: 660px
+        padding: 60px
+
+
+    user-select: none
+    z-index: -1
+    opacity: 0
+    transition: opacity 0.4s linear
+    height: 0
+    overflow: hidden
+    &.is-active,
+    &.transition
+        z-index: 1111
+        height: auto
+        overflow: auto
+    &.is-active
+        opacity: 1
+
+    &__link
+        display: inline-block
+        border-bottom: 2px solid $body-font-color
+
+        @include media(">=xs")
+            border-bottom: 3px solid $body-font-color
+
+        @include media(">=md")
+            border-bottom: 4px solid $body-font-color
+
+    &__close
+        display: block
+        position: absolute
+        height: 40px
+        width: 40px
+        padding-left: 6px
+        top: 8px
+        right: 11px
+        &::before
+            font-size: 36px
+            content: "×"
+        @include media(">=md")
+            &::before
+                font-size: 48px
+            height: 50px
+            width: 50px
+            top: 10px
+            right: 20px
+
+
+.modernizr-touch
+    .infocard
+        @include media("<sm")
+            width: 100%
+            height: 100%
+            top: 0 !important
+            left: 0 !important
+            right: 0 !important
+            bottom: 0 !important
+
+    .hands
+        display: none
+
+    .banner,
+    // .mainbifi,
+    .basetext
+        position: fixed
+
 
 
 .draggable
