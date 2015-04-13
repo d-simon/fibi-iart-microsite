@@ -35,6 +35,7 @@ module.exports = {
     resolve: {
         root: [
             path.resolve(paths.frontend, 'node_modules'),
+            path.resolve(paths.frontend, 'bower_components'),
             path.resolve(paths.src, 'js/app')
         ]
     }
