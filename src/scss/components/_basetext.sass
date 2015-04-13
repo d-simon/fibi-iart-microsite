@@ -1,0 +1,74 @@
+//------------------------------------
+//  $BASETEXT
+//------------------------------------
+
+.basetext
+    position: absolute
+    z-index: 11
+    top: ($site-margin/3)
+    left: ($site-margin/3)
+    padding: $site-margin/3
+    user-select: none
+    white-space: nowrap
+
+    &.dragged
+        display: block
+        top: auto
+        right: auto
+        bottom: auto
+        left: auto
+
+    &--location
+        top: ($site-margin/3)
+        right: ($site-margin/3)
+        left: auto
+        transform: translateX(100%) rotate(90deg)
+        transform-origin: 0% 0%;
+    &--info
+        top: auto
+        right: ($site-margin/3)
+        bottom: ($site-margin/3)
+        left: auto
+    &--date
+        top: auto
+        bottom: ($site-margin/3)
+        left: ($site-margin/3)
+
+    @include media(">xs")
+        top: ($site-margin/2)
+        left: ($site-margin/2)
+        padding: $site-margin/2
+
+        &--location
+            top: ($site-margin/2)
+            right: ($site-margin/2)
+            left: auto
+        &--info
+            top: auto
+            right: ($site-margin/2)
+            bottom: ($site-margin/2)
+            left: auto
+        &--date
+            top: auto
+            bottom: ($site-margin/2)
+            left: ($site-margin/2)
+
+
+    @include media(">md")
+        top: $site-margin
+        left: $site-margin
+        padding: $site-margin
+
+        &--location
+            top: $site-margin
+            right: $site-margin
+            left: auto
+        &--info
+            top: auto
+            right: $site-margin
+            bottom: $site-margin
+            left: auto
+        &--date
+            top: auto
+            bottom: $site-margin
+            left: $site-margin
