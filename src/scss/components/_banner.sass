@@ -13,18 +13,28 @@
 
     &__info,
     &__subtitle
+        @include font-base()
         margin-left: 5px
-        font-size: 24px
+        font-size: 16px
         // font-size: 60px
 
     &__title
         @include font-fat()
-        font-size: 160px
-        margin-bottom: -40px
+        font-size: 120px
+        margin-bottom: -30px
 
 
+    @include media(">=320px")
+        &__title
+            font-size: 160px
+            margin-bottom: -40px
 
-    @include media(">xs")
+        &__info,
+        &__subtitle
+            margin-left: 5px
+            font-size: 20px
+
+    @include media(">=xs")
         &__title
             font-size: 220px
             margin-bottom: -50px
@@ -36,7 +46,7 @@
 
 
 
-    @include media(">lg")
+    @include media(">=lg")
         &__title
             font-size: 300px
             margin-bottom: -75px
