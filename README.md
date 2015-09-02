@@ -1,4 +1,4 @@
-BIFI
+For Interaction By Interaction – "iart"
 ====
 
-By Interaction For Interaction @ ZHdK
+This was the [microsite](http://fibi.zhdk.ch/) to announce the very first FIBI Event (Guest: [iart GmbH](http://iart.ch)) at the Zurich University of the Arts.
